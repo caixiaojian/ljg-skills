@@ -15,6 +15,7 @@
 | **ljg-skill-map** | 技能地图 — 扫描所有已安装技能，渲染可视化总览 |
 | **ljg-word** | 英语单词精通 — 深度拆解一个英语单词的核心语义和顿悟时刻 |
 | **ljg-writes** | 写作引擎 — 带着一个观点出发，在写的过程中把它想透 |
+| **ljg-travel** | 旅行研究 — 输入城市名，自动生成深度文化研究文档（org-mode）+ 便携卡片（PNG）。覆盖历史分层、博物馆重点、古建看点、考古发现，方法论借鉴考古学案头研究（DBA）。 |
 
 ## 工作流
 
@@ -24,6 +25,7 @@
 |--------|--------|------|
 | **ljg-paper-flow** | ljg-paper → ljg-card | 读论文 + 做卡片一气呵成 |
 | **ljg-word-flow** | ljg-word → ljg-card -i | 单词深度分析 + 信息图卡片一气呵成 |
+| **ljg-travel** | Research → ContentAnalysis → ljg-card | 城市文明研究 + org文档 + 便携卡片一气呵成 |
 
 ## 安装
 
