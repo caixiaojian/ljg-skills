@@ -2,12 +2,16 @@
 name: ljg-word-flow
 description: "Word flow: deep-dive word analysis + infograph card in one go. Takes one or more English words, runs ljg-word (generates deep semantics analysis) then ljg-card -i (generates infograph PNG). Use when user says '词卡', 'word card', 'word flow', or provides English words wanting both analysis and visual card."
 user_invocable: true
-version: "1.0.0"
+version: "1.0.1"
 ---
 
 # ljg-word-flow: 词卡
 
 一条命令完成：解词 → 铸信息图。支持多词并行。
+
+## 模式
+
+**强制 NATIVE 模式。** 本 workflow 是纯 skill 管道（ljg-word → ljg-card -i），不需要 Algorithm 的七步流程。直接按下方执行步骤调用 skill，不走 OBSERVE/THINK/PLAN/BUILD/EXECUTE/VERIFY/LEARN。
 
 ## 参数
 
