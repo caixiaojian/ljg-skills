@@ -28,9 +28,9 @@ version: "1.7.0"
 
 ### 获取内容
 
-- URL --> WebFetch 获取
+- URL --> 抓取页面内容
 - 粘贴文本 --> 直接使用
-- 文件路径 --> Read 获取
+- 文件路径 --> 读取本地文件
 
 ### 文件命名
 
@@ -39,13 +39,13 @@ version: "1.7.0"
 ### 截图工具
 
 ```bash
-node ~/.claude/skills/ljg-card/assets/capture.js <html> <png> <width> <height> [fullpage]
+node ${CODEX_HOME:-$HOME/.codex}/skills/ljg-card/assets/capture.js <html> <png> <width> <height> [fullpage]
 ```
 
-依赖：`~/.claude/skills/ljg-card/node_modules/` 中的 playwright。如报错：
+依赖：`${CODEX_HOME:-$HOME/.codex}/skills/ljg-card/node_modules/` 中的 playwright。如报错：
 
 ```bash
-cd ~/.claude/skills/ljg-card && npm install playwright && npx playwright install chromium
+cd ${CODEX_HOME:-$HOME/.codex}/skills/ljg-card && npm install playwright && npx playwright install chromium
 ```
 
 ### arxiv 检测
@@ -58,46 +58,46 @@ cd ~/.claude/skills/ljg-card && npm install playwright && npx playwright install
 
 ## 品味准则
 
-**所有模具共享**。执行任何模具前，先 Read `references/taste.md`，作为视觉质量底线贯穿全流程。
+**所有模具共享**。执行任何模具前，先读取 `references/taste.md`，作为视觉质量底线贯穿全流程。
 
 核心：反 AI 生成痕迹——禁 Inter 字体、禁纯黑、禁三等分卡片、禁居中 Hero、禁 AI 文案腔、禁假数据。
 
 ## 执行
 
-根据参数选择模具，Read `references/taste.md` + 对应的 mode 文件，按步骤执行：
+根据参数选择模具，读取 `references/taste.md` + 对应的 mode 文件，按步骤执行：
 
 ### -l（默认）：长图
 
-Read `references/mode-long.md`，按其步骤执行。
+读取 `references/mode-long.md`，按其步骤执行。
 
 模板：`assets/long_template.html`
 
 ### -i：信息图
 
-Read `references/mode-infograph.md`，按其步骤执行。
+读取 `references/mode-infograph.md`，按其步骤执行。
 
 模板：`assets/infograph_template.html`
 
 ### -m：多卡
 
-Read `references/mode-poster.md`，按其步骤执行。
+读取 `references/mode-poster.md`，按其步骤执行。
 
 模板：`assets/poster_template.html`
 
 ### -v：视觉笔记
 
-Read `references/mode-sketchnote.md`，按其步骤执行。
+读取 `references/mode-sketchnote.md`，按其步骤执行。
 
 模板：`assets/sketchnote_template.html`
 
 ### -c：漫画
 
-Read `references/mode-comic.md`，按其步骤执行。
+读取 `references/mode-comic.md`，按其步骤执行。
 
 模板：`assets/comic_template.html`
 
 ### -w：白板
 
-Read `references/mode-whiteboard.md`，按其步骤执行。
+读取 `references/mode-whiteboard.md`，按其步骤执行。
 
 模板：`assets/whiteboard_template.html`

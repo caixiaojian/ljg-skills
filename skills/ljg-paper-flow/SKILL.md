@@ -33,11 +33,11 @@ version: "1.0.1"
 
 **步骤 A — 读论文（ljg-paper）：**
 
-调用 Skill tool 执行 `ljg-paper`，传入该论文的来源。等待完成，获得生成的 org 文件路径。
+调用 `ljg-paper` 这个 skill，传入该论文的来源。等待完成，获得生成的 org 文件路径。
 
 **步骤 B — 铸卡片（ljg-card）：**
 
-读取步骤 A 生成的 org 文件，调用 Skill tool 执行 `ljg-card`（默认 `-l`，或按用户指定的模具参数），以 org 文件内容为输入。等待完成，获得 PNG 文件路径。
+读取步骤 A 生成的 org 文件，再调用 `ljg-card` 这个 skill（默认 `-l`，或按用户指定的模具参数），以 org 文件内容为输入。等待完成，获得 PNG 文件路径。
 
 ### 3. 汇总报告
 

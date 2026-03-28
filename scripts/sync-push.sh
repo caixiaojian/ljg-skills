@@ -6,8 +6,9 @@ set -euo pipefail
 
 SKILL="$1"
 MSG="$2"
-REPO="$HOME/.claude/ljg-skills-repo"
-LOCAL="$HOME/.claude/skills/$SKILL"
+AGENT_HOME="${CODEX_HOME:-$HOME/.codex}"
+REPO="$AGENT_HOME/ljg-skills-repo"
+LOCAL="$AGENT_HOME/skills/$SKILL"
 TARGET="$REPO/skills/$SKILL"
 
 if [ ! -d "$LOCAL" ]; then

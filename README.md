@@ -1,6 +1,17 @@
 # ljg-skills
 
-我的 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) 自定义技能集。
+这是一个 fork 自李继刚老师 `lijigang/ljg-skills` 的版本，保留原有 skill 方法论与内容骨架，并补上 Codex 可直接使用的兼容层。
+
+原始仓库：
+- https://github.com/lijigang/ljg-skills
+
+这个 fork 主要做了几类改动：
+- 将 Claude 专属表述改为 Codex 可执行的中性说明
+- 将安装路径调整为 `~/.codex/skills/` 约定
+- 修正部分写死的本机绝对路径与模板资源引用
+- 保留 Claude Code 兼容性
+
+向李继刚老师致敬。原 skill 的方法设计、表达风格和工作流思路都来自原仓库；这个仓库做的是 Codex 适配，不是另起炉灶。
 
 ## 技能
 
@@ -29,24 +40,52 @@
 | **ljg-word-flow** | ljg-word → ljg-card -i | 单词深度分析 + 信息图卡片一气呵成 |
 | **ljg-travel** | Research → ContentAnalysis → ljg-card | 城市文明研究 + org文档 + 便携卡片一气呵成 |
 
-## 安装
+## 安装到 Codex
 
 ```bash
-git clone https://github.com/lijigang/ljg-skills.git ~/.claude/plugins/ljg-skills
+git clone https://github.com/caixiaojian/ljg-skills.git ~/.codex/ljg-skills
+mkdir -p ~/.codex/skills
+cp -r ~/.codex/ljg-skills/skills/ljg-* ~/.codex/skills/
 ```
 
-然后重启 Claude Code。
+如果你的环境使用 `CODEX_HOME`，把上面的 `~/.codex` 换成 `${CODEX_HOME}`。
+
+Windows PowerShell 版本：
+
+```powershell
+git clone git@github.com:caixiaojian/ljg-skills.git $HOME\.codex\ljg-skills
+New-Item -ItemType Directory -Force -Path $HOME\.codex\skills | Out-Null
+Copy-Item $HOME\.codex\ljg-skills\skills\ljg-* $HOME\.codex\skills -Recurse -Force
+```
+
+安装完成后，重启或重新加载 Codex，让新 skill 生效。
+
+## 安装到 Claude Code
+
+```bash
+git clone https://github.com/caixiaojian/ljg-skills.git ~/.claude/plugins/ljg-skills
+mkdir -p ~/.claude/skills
+cp -r ~/.claude/plugins/ljg-skills/skills/ljg-* ~/.claude/skills/
+```
 
 ### ljg-card 依赖
 
-`ljg-card` 需要 Playwright 来截图：
+`ljg-card` 需要 Playwright 来截图。无论是 Codex 还是 Claude Code，依赖安装步骤都一样：
 
 ```bash
-cd ~/.claude/plugins/ljg-skills && bash scripts/install.sh
+cd ~/.codex/ljg-skills && bash scripts/install.sh
 ```
 
 或手动安装：
 
 ```bash
-cd ~/.claude/plugins/ljg-skills/skills/ljg-card && npm install && npx playwright install chromium
+cd ~/.codex/ljg-skills/skills/ljg-card && npm install && npx playwright install chromium
+```
+
+Windows PowerShell 手动安装：
+
+```powershell
+Set-Location $HOME\.codex\ljg-skills\skills\ljg-card
+npm install
+npx playwright install chromium
 ```

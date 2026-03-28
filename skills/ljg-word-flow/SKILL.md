@@ -34,11 +34,11 @@ version: "1.0.1"
 
 **步骤 A — 解词（ljg-word）：**
 
-调用 Skill tool 执行 `ljg-word`，传入单词。在对话中输出 Markdown 解析结果。
+调用 `ljg-word` 这个 skill，传入单词。在对话中输出 Markdown 解析结果。
 
 **步骤 B — 铸信息图（ljg-card -i）：**
 
-以步骤 A 的解析内容为输入，调用 Skill tool 执行 `ljg-card -i`。生成 PNG 文件到 `~/Downloads/`。
+以步骤 A 的解析内容为输入，调用 `ljg-card -i`。生成 PNG 文件到 `~/Downloads/`。
 
 ### 3. 多词并行
 

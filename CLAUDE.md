@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance when working with this repository from either Claude Code or Codex.
 
 ## Overview
 
-This is a personal Claude Code skills repository. Each skill is a self-contained directory that can be installed to `~/.claude/skills/` to extend Claude Code's capabilities.
+This is a personal agent skills repository. Each skill is a self-contained directory that can be installed to `~/.codex/skills/` for Codex or `~/.claude/skills/` for Claude Code.
 
 ## Repository Structure
 
@@ -65,24 +65,24 @@ bash ljg-skill-map/scripts/scan.sh
 ### Install Skills (for users)
 
 ```bash
-# Copy all skills to Claude Code
-mkdir -p ~/.claude/skills
-cp -r ljg-* ~/.claude/skills/
+# Copy all skills to Codex
+mkdir -p ~/.codex/skills
+cp -r skills/ljg-* ~/.codex/skills/
 ```
 
 ## Architecture Notes
 
 ### Skill Invocation
 
-- Skills with `user_invocable: true` can be triggered via `/skill-name` or natural language
+- Skills with `user_invocable: true` can be triggered via `/skill-name` or natural language, depending on the host agent
 - Trigger phrases are defined in each skill's `description` field
-- Skills can call other skills via the Skill tool
+- Workflow skills may invoke other skills as sub-steps
 
 ### Content Processing Pipeline
 
 Several skills share a common pattern for content ingestion:
-- **URL** → WebFetch
-- **File path** → Read tool
+- **URL** → fetch or browse the page content
+- **File path** → read the local file
 - **Raw text** → Direct use
 
 ### ljg-card Architecture
@@ -116,6 +116,6 @@ The most complex skill with multiple rendering modes:
 ## Testing Changes
 
 After modifying a skill:
-1. Copy to `~/.claude/skills/`
-2. Restart Claude Code to reload skills
+1. Copy to `~/.codex/skills/` or `~/.claude/skills/`
+2. Reload the host agent if needed
 3. Test via natural language trigger or `/skill-name`

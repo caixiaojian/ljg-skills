@@ -31,7 +31,7 @@ version: "1.0.0"
 
 ### 2. 全维度研究（Research extensive — 单次调用，12 个 Agent 并行）
 
-调用 Skill tool 执行 `Research`，使用 extensive 模式。
+调用研究类能力或工作流执行深度 Research，使用 extensive 模式。
 
 **核心设计：不分"知识底图"和"平台发现"两步——它们是同一个研究操作的不同搜索角度。** 12 个 Agent 同时出发，一半做学术/百科研究，一半做平台内容搜索。
 
@@ -79,7 +79,7 @@ version: "1.0.0"
 
 **对每个 URL 并行启动 Agent subagent：**
 
-每个 subagent 调用 Skill tool 执行 `ContentAnalysis`，传入 URL，使用 fast 深度级别，提取核心知识点。
+每个 subagent 调用内容分析类能力或工作流执行 `ContentAnalysis`，传入 URL，使用 fast 深度级别，提取核心知识点。
 
 **降级规则：**
 - 如果 ContentAnalysis 对某个 URL 失败（无法访问、无字幕等），跳过该 URL，不阻塞
@@ -165,11 +165,11 @@ version: "1.0.0"
 
 **卡片 A — 城市文明概览（信息图）：**
 
-调用 Skill tool 执行 `ljg-card -i`，输入内容为：城市历史分层 + 核心博物馆清单 + 必看古建清单的精华摘要。一张图看懂这座城市的文明骨架。
+调用 `ljg-card -i`，输入内容为：城市历史分层 + 核心博物馆清单 + 必看古建清单的精华摘要。一张图看懂这座城市的文明骨架。
 
 **卡片 B — 参观路线速查（长图）：**
 
-调用 Skill tool 执行 `ljg-card -l`，输入内容为：参观路线建议 + 每个地点的核心看点。手机上随时查看。
+调用 `ljg-card -l`，输入内容为：参观路线建议 + 每个地点的核心看点。手机上随时查看。
 
 ### 6. 汇总报告
 

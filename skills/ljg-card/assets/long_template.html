@@ -191,7 +191,11 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    object-fit: cover;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    color: var(--bg);
+    font: 700 18px/1 var(--font);
   }
 
   .footer .author-name {
@@ -215,7 +219,7 @@
     </div>
     <div class="footer">
       <div class="author">
-        <img class="avatar" src="file:///Users/lijigang/.claude/skills/ljg-card/assets/logo.png" alt="">
+        <span class="avatar" aria-hidden="true">L</span>
         <span class="author-name">{{SOURCE}}</span>
       </div>
       {{ARXIV_LINE}}

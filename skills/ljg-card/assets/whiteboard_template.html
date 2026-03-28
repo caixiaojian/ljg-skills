@@ -69,9 +69,14 @@
     gap: 14px;
   }
 
-  .colophon .who img {
+  .colophon .who .brand-mark {
     width: 40px; height: 40px;
-    border-radius: 50%; object-fit: cover;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    color: var(--board);
+    font: 700 18px/1 var(--sans);
   }
 
   .colophon .who span {
@@ -116,7 +121,7 @@
   {{CONTENT_HTML}}
   <div class="colophon">
     <div class="who">
-      <img src="file:///Users/lijigang/.claude/skills/ljg-card/assets/logo.png" alt="">
+      <span class="brand-mark" aria-hidden="true">L</span>
       <span>{{SOURCE}}</span>
     </div>
     {{ARXIV_LINE}}
